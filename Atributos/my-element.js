@@ -11,6 +11,11 @@ class myElement extends HTMLElement {
       super()
       this.attachShadow({ mode: 'open' })
 
+      // generamos las instancias con los datos de atributo que le paseremos anuestras etiquetas
+      this.titulo = this.getAttribute("titulo")
+      this.parrafo = this.getAttribute("parrafo")
+      this.img = this.getAttribute("img")
+
    }
 
    getTemplate() {
@@ -21,10 +26,11 @@ class myElement extends HTMLElement {
 
       template.innerHTML = /*html*/`
          <section>
-            <h2><slot name="titulo"><slot></h2>
+            <h2>${this.titulo}</h2>
             <div>
-               <p class="parrafo"><slot name="parrafo"></slot></p>
+               <p class="parrafo">${this.parrafo}</p>
             </div>
+            <img src=${this.img}/>
          </section>
          ${this.getStyles()}
       `
