@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>:host</title>
+</head>
+<body>
+
+   <my-custom >
+      <span slot="titulo">prueba titulo1</span>
+      <span slot="parrafo">prueba parrafo1</span>
+   </my-custom>
+
+   <my-custom class="segundo">
+      <span slot="titulo">prueba titulo2</span>
+      <span slot="parrafo">prueba parrafo2</span>
+   </my-custom>
+   <my-custom yellow>
+      <span class="titulo" slot="titulo">prueba titulo3</span>
+      <span slot="parrafo">prueba parrafo3</span>
+   </my-custom>
+   <my-custom>
+      <span slot="titulo">prueba titulo4</span>
+      <span slot="parrafo">prueba parrafo4</span>
+   </my-custom>
+
+   <article class="card">
+      <my-custom>
+         <span slot="titulo">prueba titulo5</span>
+         <span slot="parrafo">prueba parrafo5</span>
+      </my-custom>
+   </article>
+
+   <script src="./app.js"></script>
+</body>
+</html>

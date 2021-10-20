@@ -26,42 +26,38 @@ class MyCustomElemen extends HTMLElement {
 
    // creamos estylos para agregarlo en el template
    getStyles() {
-      // estos stylos y la forma de utilizar el host es solo para el shadowdom :host asemos referencia anuestro componente que es en este caso <my-custom></my-custom> despues entre parentesis ubicamos lo que deseamos
+      // creamos las variables root de css para que podamos establecer nuestro estylos internos y ala vez poder sobreescribirlos desde el css externo
       return /*html*/`
          <style>
-
             :host{
-               background-color:gray;
+               /* se crean las variables css desde aqui eñ :host */
+               --primary-color:tomato;
+               --second-color:salmon;
+               --heading-primary:30px;
+               --heading-secondary:25px;
                display:inline-block;
-               color:#000;
-               padding:.4em;
-               margin:5px;
+               width:100%;
+               min-width:300px;
+               max-width:450px;
             }
 
-            :host(.segundo){
-               background-color: blue ;
+            section{
+               background-color:var(--primary-color)
+            }
+            
+            section div{
+               background-color:var(--second-color)
+
             }
 
-            :host([yellow]){
-               background-color: yellow;
+            h2{
+               font-size:var(--heading-primary)
             }
+            
+            p{
+               font-size:var(--heading-secondary)
 
-            :host([yellow]) h2{
-               color:red;
             }
-
-            :host([yellow]) p{
-               color:peru;
-            }
-
-            /* esto es para aplicarle css anuestro componente que se encuentra o referencia un contexto osea en donde esta nuestro componente */
-            /* osea: aplica estylo ami componente que este dentro de un article que tenga la clase card */
-            :host-context(article.card){
-               display:block;
-               max-width:100%;
-            }
-
-           
          
          </style>
       `
