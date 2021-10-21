@@ -27,7 +27,7 @@ class MyCustomElemen extends HTMLElement {
    // creamos estylos para agregarlo en el template
    getStyles() {
       // creamos las variables root de css para que podamos establecer nuestro estylos internos y ala vez poder sobreescribirlos desde el css externo
-      return /*html*/`
+      return /*css*/`
          <style>
             :host{
                /* se crean las variables css desde aqui eñ :host */

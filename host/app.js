@@ -27,7 +27,7 @@ class MyCustomElemen extends HTMLElement {
    // creamos estylos para agregarlo en el template
    getStyles() {
       // estos stylos y la forma de utilizar el host es solo para el shadowdom :host asemos referencia anuestro componente que es en este caso <my-custom></my-custom> despues entre parentesis ubicamos lo que deseamos
-      return /*html*/`
+      return /*css*/`
          <style>
 
             :host{
